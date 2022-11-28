@@ -60,12 +60,6 @@ export const AddressStep = ({ onComplete, data }: AddressStepProps) => {
             setFieldValue("state", cepData.uf);
             setFieldValue("city", cepData.localidade);
           }
-        } catch (error) {
-          (toast.current as any)?.show({
-            severity: "error",
-            detail: (error as CustomError).msg,
-            life: 4000,
-          });
         } finally {
           setState((prev) => ({
             ...prev,
@@ -143,7 +137,7 @@ export const AddressStep = ({ onComplete, data }: AddressStepProps) => {
                 onBlur={handleBlur}
                 labeltext="Estado*"
                 errorMessage={touched["state"] && errors["state"]}
-                disabled
+                disabled={!!state?.cepData?.uf}
               />
             </div>
 
@@ -156,7 +150,7 @@ export const AddressStep = ({ onComplete, data }: AddressStepProps) => {
                 onBlur={handleBlur}
                 labeltext="Cidade*"
                 errorMessage={touched["city"] && errors["city"]}
-                disabled
+                disabled={!!state?.cepData?.localidade}
               />
             </div>
 
