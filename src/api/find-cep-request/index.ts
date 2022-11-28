@@ -14,7 +14,7 @@ const findCepRequest = async (cep: string): Promise<CepResponseDTO> => {
     const error = e as AxiosError;
 
     let customError: CustomError = {
-      msg: "Erro ao consultar CEP",
+      msg: "Erro ao consultar CEP.",
       httpStatus: error.status,
       apiMessage: error.message,
     };

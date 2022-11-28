@@ -22,9 +22,9 @@ export const MapView = ({
   height = "300",
   allowFullScreen = false,
   center,
-  zoom = "",
+  zoom = "17",
 }: MapViewProps) => {
-  const locationEncoded = useMemo(() => encodeURI(location), [location]);
+  const locationEncoded = useMemo(() => location.trim().replaceAll(' ', '+'), [location]);
 
   const centerFormatted = useMemo(
     () => (center ? `${center.lat},${center.lng}` : ""),
@@ -33,11 +33,16 @@ export const MapView = ({
 
   const parameters = useMemo(
     () =>
-      new URLSearchParams({
-        q: locationEncoded,
-        center: centerFormatted,
-        zoom,
-      }).toString(),
+      center
+        ? new URLSearchParams({
+            q: locationEncoded,
+            center: centerFormatted,
+            zoom,
+          }).toString()
+        : new URLSearchParams({
+            q: locationEncoded,
+            zoom,
+          }).toString(),
     [locationEncoded, centerFormatted, zoom]
   );
 
