@@ -25,7 +25,7 @@ export const CompanyDataStep = ({
       initialValues: data,
     });
   return (
-    <Card className="max-w-screen p-3 w-10 md:w-30rem">
+    <Card className="max-w-screen p-3  md:w-30rem">
       <h2 className="mt-0">Dados da empresa</h2>
       <p>Preencha as informações com os dados da sua empresa.</p>
 

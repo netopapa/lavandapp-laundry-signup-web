@@ -21,7 +21,7 @@ export const PersonalDataStep = ({
     });
 
   return (
-    <Card className="max-w-screen p-3 w-10 md:w-30rem">
+    <Card className="max-w-screen p-3  md:w-30rem">
       <h2 className="mt-0">Responsável da loja</h2>
       <p>Preencha as informações com seus dados pessoais.</p>
 

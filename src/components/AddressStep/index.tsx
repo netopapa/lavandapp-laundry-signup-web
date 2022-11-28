@@ -88,7 +88,7 @@ export const AddressStep = ({ onComplete, data }: AddressStepProps) => {
 
   return (
     <>
-      <Card className="max-w-screen p-3 w-10 md:w-30rem">
+      <Card className="max-w-screen p-3  md:w-30rem">
         <h2 className="mt-0">Endereço da loja</h2>
         <p>Preencha as informações de endereço da sua loja.</p>
 
