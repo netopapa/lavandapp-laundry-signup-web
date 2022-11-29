@@ -42,7 +42,7 @@ export const Home = () => {
   return (
     <>
       {state.isLoading && <Loading />}
-      <div className="flex justify-content-center align-items-center min-h-screen bg-primary p-3">
+      <div className="flex justify-content-center align-items-center min-h-screen bg-primary p-3 fadeInAnimation">
         {state.step === "ADDRESS" && (
           <div>
             <AddressStep

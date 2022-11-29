@@ -19,7 +19,7 @@ export const MapView = ({
   location,
   mapMode = "place",
   width = "100%",
-  height = "300",
+  height = "200",
   allowFullScreen = false,
   center,
   zoom = "17",

@@ -60,6 +60,11 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.fadeInAnimation {
+  animation-name: fadeIn;
+  animation-duration: 1.5s;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

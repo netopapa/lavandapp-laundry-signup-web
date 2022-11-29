@@ -11,7 +11,7 @@ import { LInputText } from "../../custom-prime/LInputText";
 import { CompanyAddress } from "../../models/company-address";
 import { MapView } from "../MapView";
 import { useAddressForm } from "./use-address-form";
- 
+
 export type AddressStepProps = {
   data?: CompanyAddress;
   onComplete: (address: CompanyAddress) => void;
@@ -208,6 +208,10 @@ export const AddressStep = ({ onComplete, data }: AddressStepProps) => {
               <div className="h-1rem" />
               <MapView location={inlineLocation} />
             </>
+          )}
+
+          {!inlineLocation && (
+            <div style={{height: '200px'}} className="bg-blue-50"></div>
           )}
 
           <div className="h-2rem" />
