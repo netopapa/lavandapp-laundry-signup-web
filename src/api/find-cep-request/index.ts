@@ -7,7 +7,7 @@ const findCepRequest = async (cep: string): Promise<CepResponseDTO> => {
   try {
     return (
       await axios.get<CepResponseDTO>(
-        CONSTANTS.CORE_BASE_URL + `cep/${cep}`
+        CONSTANTS.CORE_BASE_URL + `viacep/${cep}`
       )
     ).data;
   } catch (e) {

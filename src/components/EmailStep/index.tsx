@@ -19,7 +19,7 @@ export const EmailStep = ({
   return (
     <Card className="max-w-screen p-3  md:w-30rem">
       <h2 className="mt-0">Email</h2>
-      <p>Esolha um email para receber comunicações da plataforma Lavandapp.</p>
+      <p>Escolha um email para receber comunicações da plataforma Lavandapp. Será necessário confirmar este email em seguida.</p>
 
       <div className="h-2rem" />
 

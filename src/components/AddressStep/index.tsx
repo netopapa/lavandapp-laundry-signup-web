@@ -46,15 +46,15 @@ export const AddressStep = ({ onComplete, data }: AddressStepProps) => {
         setState((prev) => ({ ...prev, cepLoading: true }));
         try {
           const cepData = await findCepRequest(values.zipcode);
+          setState((prev) => ({ ...prev, cepData }));
           if (cepData && cepData.localidade !== "Florianópolis") {
             (toast.current as any)?.show({
               severity: "warn",
               detail:
-                "Estamos presente somente em Florianópolis/SC por enquanto.",
-              life: 4000,
+                "Estamos presente somente em Florianópolis/SC no momento.",
+              life: 10000,
             });
           } else {
-            setState((prev) => ({ ...prev, cepData }));
             setFieldValue("neighborhood", cepData.bairro);
             setFieldValue("street", cepData.logradouro);
             setFieldValue("state", cepData.uf);
@@ -211,13 +211,21 @@ export const AddressStep = ({ onComplete, data }: AddressStepProps) => {
           )}
 
           {!inlineLocation && (
-            <div style={{height: '200px'}} className="bg-blue-50"></div>
+            <div style={{ height: "200px" }} className="bg-blue-50"></div>
           )}
 
           <div className="h-2rem" />
 
           <div className="flex justify-content-end">
-            <Button label="Continuar" aria-label="Submit" type="submit" />
+            <Button
+              label="Continuar"
+              disabled={
+                !!state?.cepData?.localidade &&
+                state.cepData.localidade !== "Florianópolis"
+              }
+              aria-label="Submit"
+              type="submit"
+            />
           </div>
         </form>
       </Card>
